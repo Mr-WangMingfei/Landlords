@@ -48,6 +48,12 @@ namespace ETModel
 				//执行斗地主初始事件，也就是创建LandLogin界面
 				Game.EventSystem.Run(UIEventType.LandInitSceneStart);
 
+
+				////练习3
+				//TestRoom room = ComponentFactory.Create<TestRoom>();
+				//room.AddComponent<TimeTestComponent>();
+				//room.GetComponent<TimeTestComponent>().Run(Typebehavior.Waiting, 5000);
+
 				//测试发送给服务端一条文本消息
 				Session session = Game.Scene.GetComponent<NetOuterComponent>().Create(GlobalConfigComponent.Instance.GlobalProto.Address);
                 G2C_TestMessage g2CTestMessage = (G2C_TestMessage) await session.Call(new C2G_TestMessage() { Info = "==>>服务端的朋友,你好!收到请回答" });
