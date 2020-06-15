@@ -31,12 +31,13 @@ namespace ETModel
             Session sessionGate = Game.Scene.GetComponent<NetOuterComponent>().Create(messageRealm.GateAddress);
             if (SessionComponent.Instance == null)
             {
-                //Log.Debug("创建唯一Session");
+                Log.Debug("创建唯一Session");
                 Game.Scene.AddComponent<SessionComponent>().Session = sessionGate;
             }
             else
             {
                 //存入SessionComponent方便我们随时使用
+                Log.Debug("存入SessionComponent方便我们随时使用");
                 SessionComponent.Instance.Session = sessionGate;
                 //Game.EventSystem.Run(EventIdType.SetHotfixSession);
             }
