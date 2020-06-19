@@ -25,6 +25,9 @@ namespace ETModel
 				Game.Scene.AddComponent<GlobalConfigComponent>();
 				Game.Scene.AddComponent<ResourcesComponent>();
 
+				// 下载ab包
+				await BundleHelper.DownloadBundle();
+
 				ETModel.Game.Scene.GetComponent<ResourcesComponent>().LoadBundle("config.unity3d");
 				Game.Scene.AddComponent<ConfigComponent>();
 				ETModel.Game.Scene.GetComponent<ResourcesComponent>().UnloadBundle("config.unity3d");
@@ -48,6 +51,7 @@ namespace ETModel
 				//执行斗地主初始事件，也就是创建LandLogin界面
 				Game.EventSystem.Run(UIEventType.LandInitSceneStart);
 
+			
 
 				////练习3
 				//TestRoom room = ComponentFactory.Create<TestRoom>();
